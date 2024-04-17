@@ -73,5 +73,5 @@ if __name__ == "__main__":
     generator = UserGenerator()
     num_users = 100
     current_path = os.path.dirname(os.path.abspath(__file__))
-    output_file = '{current_path}/json/users.json'
+    output_file = current_path + "/json/users.json"
     generator.write_users_to_json(num_users, output_file)
