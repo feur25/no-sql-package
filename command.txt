@@ -1,0 +1,17 @@
+//Insertion de données
+myReplicaSet:PRIMARY> db.usersCollection.insertOne({"name": "Alexis Giromagny", "age" : 24, "email" : "alexis.giromagny@gmail.com", "createdAt": new Date()})
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("660d37841a29f180e7094ac4")
+}
+
+//Afficher les utilisateurs qui ont plus de 30 ans
+db.usersCollection.find({ "age": { "$gt": 30 } })
+
+//Augmenter l'âge de tout les utilsateurs de 5 ans
+myReplicaSet:PRIMARY> db.usersCollection.updateMany({}, { "$inc": { "age": 5 } })
+{ "acknowledged" : true, "matchedCount" : 100, "modifiedCount" : 100 }
+
+//Supprimer un utilisateur spécifique
+myReplicaSet:PRIMARY> db.usersCollection.deleteOne({ "name": "Alexis Giromagny" })
+{ "acknowledged" : true, "deletedCount" : 1 }
