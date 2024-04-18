@@ -48,16 +48,16 @@ nous allons utiliser la commande suivante qui est le script shell précèdent :
 ### Les commandes MongoDB Cli
 Nous passons enfin au commandes mongoDB rassurer vous après nous verrons et utiliserons un script pour opti c'est commande :
 
-	```shell
-	docker exec -it mongo_instance_1 mongosh
-	```
+```shell
+docker exec -it mongo_instance_1 mongosh
+```
 <img width="783" alt="Capture d’écran 2024-04-17 à 21 14 51" src="https://github.com/feur25/no-sql-package/assets/39668417/5de02f01-3218-49bc-89ca-8a8c918c29d2">
 
 Ensuite, nous arrivons sur la Cli mais nous ne serons pas encore sur la bonne database, pour cela nous allons utiliser la commande suivante :
 
-	```shell
-	use nosql
-	```
+```shell
+use nosql
+```
 <img width="297" alt="Capture d’écran 2024-04-17 à 21 15 47" src="https://github.com/feur25/no-sql-package/assets/39668417/410cb53d-a2d5-49a7-9235-2a9c48c80a1b">
 pour information nosql a été définie dans notre docker compose : 
 <img width="598" alt="Capture d’écran 2024-04-17 à 21 16 35" src="https://github.com/feur25/no-sql-package/assets/39668417/aa488e4d-2f75-4878-ab2b-2cc754f52392">
@@ -68,38 +68,38 @@ pour information nosql a été définie dans notre docker compose :
 Cette étapes n'est pas obligatoire, elle est la plus pour vous familliariser avec mogoDB
 
 Insertion de données :
-	```shell
-	db.usersCollection.insertOne({
-	"name": "Coletta-Chambon Quentin", 
-	"age" : 24, 
-	"email" : "feur09@gmail.com", 
-	"createdAt": new Date()
-	})
-	```
+```shell
+db.usersCollection.insertOne({
+"name": "Coletta-Chambon Quentin", 
+"age" : 24, 
+"email" : "feur09@gmail.com", 
+"createdAt": new Date()
+})
+```
  <img width="450" alt="Capture d’écran 2024-04-17 à 21 18 40" src="https://github.com/feur25/no-sql-package/assets/39668417/83dde131-1998-47d5-ae7e-495577393653">
 
 
 
 nous afficheron les données via un filtre :
 
-	```shell
-	db.usersCollection.find({ "age": { "$gt": 30 } })
-	```
+```shell
+db.usersCollection.find({ "age": { "$gt": 30 } })
+```
 <img width="579" alt="Capture d’écran 2024-04-17 à 21 20 19" src="https://github.com/feur25/no-sql-package/assets/39668417/01c17676-3ce7-44d5-ae1c-96edd24f8a05">
 
 Augmentation d'une données :
 
-	```shell
-	db.usersCollection.updateMany({}, { "$inc": { "age": 5 } })
-	```
+```shell
+db.usersCollection.updateMany({}, { "$inc": { "age": 5 } })
+```
 <img width="638" alt="Capture d’écran 2024-04-17 à 21 21 38" src="https://github.com/feur25/no-sql-package/assets/39668417/94ab9770-060b-41ba-8e03-c92bbe019b4c">
 
 
 Suppression de données :
 
-	```shell
-	db.usersCollection.deleteOne({ "name": "Coletta-Chambon Quentin" })}
-	```
+```shell
+db.usersCollection.deleteOne({ "name": "Coletta-Chambon Quentin" })}
+```
 <img width="688" alt="Capture d’écran 2024-04-17 à 21 22 59" src="https://github.com/feur25/no-sql-package/assets/39668417/80ab83e8-089f-4d26-927a-3c06639925a4">
 
 
