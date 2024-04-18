@@ -110,7 +110,9 @@ Nous passons a l'étape de l'optimisation, et des commandes disponibles, qui va 
 Nous utiliserons le script MongoDBOperations.py
 
 celui-ci est composer de diverse function et paramètre dans votre commande :
+
 --method (sélection de la méthode employé) :
+
 	- create (crée un utilisateur avec un nom, age et email)
  	- delete (supprimer un user via sont nom)
   	- modify (modifier l'age ou l'email, d'un user via sont nom)
